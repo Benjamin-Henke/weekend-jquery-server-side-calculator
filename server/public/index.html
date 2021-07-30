@@ -5,11 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend JQuery Server Side Calculator</title>
+    <link rel="stylesheet" href="style.css">
     <script src="./scripts/jquery-3.6.0.min.js"></script>
     <script src="./scripts/client.js"></script>
 </head>
 <body>
     <h1>Server Side Calculator</h1>
+    
+    <!--Inputs to the calculator-->
+    <input id="numOneIn" class="numberInputsIn" type="number" placeholder="number one">
+
+    <button id="plusOut" class="mathButtons"><span>&#43;</span></button>
+    <button id="minusSignOut" class="mathButtons"><span>&#8722;</span></button>
+    <button id="multiplySignOut" class="mathButtons"><span>&#215;</span></button>
+    <button id="divideSignOut" class="mathButtons"><span>&#247;</span></button>
+  
+
+    <input id="numTwoOut" class="numberInputsIn" type="number" placeholder="number two">
+    <button id="equalSignOut" class="mathButtons"><span>&#61;</span></button>
+    <button id="clearSignOut" class="mathButtons"><span>C</span></button>
+
+    <h2 id="equalsIn"><span>Answer Here</span></h2>
     
 </body>
 </html>

@@ -14,5 +14,11 @@
 [x] setup port and listen for req
 
 ## Phase 2 - interface
+[x] create num1 input
+[x] create plus, minus, divide, multiply buttons
+[x] create num2 input
+[x] create equals inputs 
+[x] create clear inputs
+[x] equals output spot
 
 ## Phase 3 - functionality
