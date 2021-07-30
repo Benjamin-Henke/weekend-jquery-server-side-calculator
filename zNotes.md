@@ -1,5 +1,5 @@
 # BASE #
-[] logic **must** be done on server 
+logic **must** be done on server 
 
 ## Phase 1 - setup 
 [x] html / css
@@ -20,5 +20,14 @@
 [x] create equals inputs 
 [x] create clear inputs
 [x] equals output spot
+[x] operation history
 
 ## Phase 3 - functionality
+[] register button clicks
+    [x] 6 separate functions for each operation
+    [x] clear button will clear user input numbers
+    [] grab input data
+    [] send operation on equals click
+[] POST data to server
+[] do math on server
+[] GET data from server
