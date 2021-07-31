@@ -4,32 +4,42 @@ function onReady() {
     console.log('client');
     $('#equalSignOut').on('click', equalsButton);
     $('#clearSignOut').on('click', clearButton);
-    $('#plusSignOut').on('click', additionButton)
+    $('#plusSignOut').on('click', additionButton);
+    $('#minusSignOut').on('click', subtractionButton);
+    $('#multiplySignOut').on('click', multiplicationButton);
+    $('#divideSignOut').on('click', divisionButton);
 }
 
 // GLOBAL VARIABLES
 // operation buttons will change this 
 let operationChosen = null;
+let operationHistory = [];
 
 
 // // Operation Buttons
 function additionButton() {
     console.log('Addition Button');
-    operationChosen = 'plus'
+    operationChosen = '+';
     console.log('Operation Chosen:', operationChosen);
 } // end additionButton
 
-// function subtractionButton() {
-//     console.log('Subtraction Button');
-// } // end subtractionButton
+function subtractionButton() {
+    console.log('Subtraction Button');
+    operationChosen = '-';
+    console.log('Operation Chosen:', operationChosen);
+} // end subtractionButton
 
-// function multiplicationButton() {
-//     console.log('Multiplication Button');
-// } // end multiplicationButton
+function multiplicationButton() {
+    console.log('Multiplication Button');
+    operationChosen = 'x';
+    console.log('Operation Chosen:', operationChosen);
+} // end multiplicationButton
 
-// function divisionButton() {
-//     console.log('Division Button');
-// } // end divisionButton
+function divisionButton() {
+    console.log('Division Button');
+    operationChosen = '/';
+    console.log('Operation Chosen:', operationChosen);
+} // end divisionButton
 
 function clearButton() {
     console.log('Clear Button');
@@ -50,6 +60,8 @@ function equalsButton() {
         numTwo: $('#numTwoIn').val(),
     };
 
+    operationHistory.push(newProblem);
+
     // push newNumbers to mathProblem array
     console.log('Math Problem is', newProblem);
 
@@ -61,7 +73,9 @@ function equalsButton() {
     }).then((response) => {
         console.log('POST /math', response);
   
+        appendHistory();
         getAnswer();
+        operationHistory = [];
 
     }).catch((error) => {
         console.log('POST /math failed', error);
@@ -70,7 +84,7 @@ function equalsButton() {
     
     // clear inputs after equals button is clicked
     clearButton();
-    operationChose = null;
+    operationChosen = null;
 } // equalsButton
 
 function getAnswer() {
@@ -84,3 +98,17 @@ function getAnswer() {
         equalsIn.append(response);
     });
 } // end getAnswer
+
+// appends the DOM for the history
+function appendHistory() {
+    let operationList = $('#operationHistoryList')
+    for (let operation of operationHistory) {
+        operationList.append(`
+            <li>
+                ${operation.numOne}
+                ${operation.operator}
+                ${operation.numTwo}
+            </li>
+        `)
+    } // end for of loop
+} // end appendHistory

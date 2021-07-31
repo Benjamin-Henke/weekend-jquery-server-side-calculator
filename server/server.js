@@ -71,8 +71,23 @@ app.listen(port, () => {
 function calcAnswer() {
     let result = 0;
     // if statements to determine what the operation will be
-    if (operator == 'plus') {
+    if (operator == '+') {
         result = numOne + numTwo;
         answer.push(result);
+        return
     } //end if 'plus' statement
-} // end operations
+    else if (operator == '-') {
+        result = numOne - numTwo;
+        answer.push(result);
+        return
+    }
+    else if (operator == 'x') {
+        result = numOne * numTwo;
+        answer.push(result);
+        return
+    }
+    else if (operator == '/') {
+        result = numOne / numTwo;
+        answer.push(result);
+        return
+    }} // end operations
