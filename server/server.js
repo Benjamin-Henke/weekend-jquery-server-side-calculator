@@ -9,6 +9,18 @@ app.use(bodyParser.json()); // setup body-parser
 app.use(bodyParser.urlencoded({extended:true})); // tell express how to read data from client (json || url-encoded)
 
 
+app.post('/math', (req, res) => {
+    console.log('New math problem received');
+    console.log('req.body', req.body);
+    let newMathProblem = req.body;
+    
+    
+    
+}); // end app.post
+
+
+
+
 
 
 

@@ -21,6 +21,7 @@ logic **must** be done on server
 [x] create clear inputs
 [x] equals output spot
 [x] operation history
+[] have an input screen above input area?? (will it be easier to grab data?)
 
 ## Phase 3 - functionality
 [] register button clicks
@@ -31,3 +32,4 @@ logic **must** be done on server
 [] POST data to server
 [] do math on server
 [] GET data from server
+
