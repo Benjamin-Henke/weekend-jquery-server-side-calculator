@@ -1,7 +1,7 @@
 $(document).ready(onReady);
 
 function onReady() {
-    console.log('client.js');
+    console.log('client');
     $('#equalSignOut').on('click', equalsButton);
     $('#clearSignOut').on('click', clearButton);
     $('#plusSignOut').on('click', additionButton)
@@ -31,6 +31,15 @@ function additionButton() {
 //     console.log('Division Button');
 // } // end divisionButton
 
+function clearButton() {
+    console.log('Clear Button');
+    // clear user inputs
+    $('#numOneIn').val('');
+    $('#numTwoIn').val('');
+    // put cursor back on numOne for user
+    $('#numOneIn').focus();
+} // end clearButton
+
 
 function equalsButton() {
     console.log('Equals Buttons');
@@ -51,7 +60,9 @@ function equalsButton() {
         // send our newProblem data (obj) to the server
     }).then((response) => {
         console.log('POST /math', response);
-        // getMath() will probably go here
+  
+        getAnswer();
+
     }).catch((error) => {
         console.log('POST /math failed', error);
         $('body').alert('Missing inputs. Try again.')
@@ -62,14 +73,14 @@ function equalsButton() {
     operationChose = null;
 } // equalsButton
 
-function clearButton() {
-    console.log('Clear Button');
-    // clear user inputs
-    $('#numOneIn').val('');
-    $('#numTwoIn').val('');
-    // put cursor back on numOne for user
-    $('#numOneIn').focus();
-} // end clearButton
-
-// when button is pressed, put into "plus" into array and then if 
-// statement to add in the server
+function getAnswer() {
+    $.ajax({
+        url: '/math',
+        method: 'GET'
+    }).then((response) => {
+        console.log('GET /math response', response);
+        let equalsIn = $('#equalsIn');
+        equalsIn.empty();
+        equalsIn.append(response);
+    });
+} // end getAnswer
