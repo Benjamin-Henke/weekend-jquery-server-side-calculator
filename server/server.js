@@ -35,13 +35,13 @@ app.post('/math', (req, res) => {
             numTwo:
     } */
 
+
     // validate our data
     if (!numOne || !operator || !numTwo) {
         res.sendStatus(400).send({
             message: 'Missing a required field.'
         });
     }
-
 
     // call calcAnswer to determine answer
     calcAnswer();
@@ -53,13 +53,12 @@ app.post('/math', (req, res) => {
 app.get('/math', (req, res) => {
     console.log('Math problem solved!', answer);
     res.send(answer);
+    // clear old data
+    answer = [];
+    numOne = null;
+    operator = null;
+    numTwo = null;
 }); // end app.get 
-
-
-
-
-
-
 
 
 app.listen(port, () => {
