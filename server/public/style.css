@@ -16,6 +16,10 @@ h2 {
     margin-left: 2%;
 }
 
+ul {
+    font-size: 15px;
+}
+
 .mathButtons {
     font-size: 20px;x
     text-align: center;
@@ -42,3 +46,4 @@ h2 {
     margin-bottom: 2%;
     margin-left: 2%
 }
+

@@ -24,12 +24,12 @@ logic **must** be done on server
 [] have an input screen above input area?? (will it be easier to grab data?)
 
 ## Phase 3 - functionality
-[] register button clicks
+[x] register button clicks
     [x] 6 separate functions for each operation
     [x] clear button will clear user input numbers
-    [] grab input data
-    [] send operation on equals click
-[] POST data to server
-[] do math on server
-[] GET data from server
+    [x] grab input data
+    x] send operation on equals click
+[x] POST data to server
+[x] do math on server
+[x] GET data from server
 
