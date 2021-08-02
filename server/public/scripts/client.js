@@ -2,6 +2,8 @@ $(document).ready(onReady);
 
 function onReady() {
     console.log('client');
+
+// click listeners 
     $('#equalSignOut').on('click', equalsButton);
     $('#clearSignOut').on('click', clearButton);
     $('#plusSignOut').on('click', additionButton);

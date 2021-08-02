@@ -21,14 +21,13 @@ logic **must** be done on server
 [x] create clear inputs
 [x] equals output spot
 [x] operation history
-[] have an input screen above input area?? (will it be easier to grab data?)
 
 ## Phase 3 - functionality
 [x] register button clicks
     [x] 6 separate functions for each operation
     [x] clear button will clear user input numbers
     [x] grab input data
-    x] send operation on equals click
+    [x] send operation on equals click
 [x] POST data to server
 [x] do math on server
 [x] GET data from server
